@@ -1,6 +1,10 @@
 #!/bin/bash
+if ! which systemd > /dev/null; then
+	echo "You don't have systemd installed, this script isn't installed!"
+	exit 1
+fi
 sudo systemctl disable bootTuner
 sudo rm /usr/lib/systemd/scripts/bootTuner
 sudo rm /usr/lib/systemd/system/bootTuner.service
-echo 'Done'
+echo 'All Done!'
 exit 0

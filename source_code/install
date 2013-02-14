@@ -1,4 +1,8 @@
 #!/bin/bash
+if ! which systemd > /dev/null; then
+	echo "You don't have systemd installed, this won't work!"
+	exit 1
+fi
 sudo cp bootTuner /usr/lib/systemd/scripts/
 sudo cp bootTuner.service /usr/lib/systemd/system/
 sudo systemctl enable bootTuner
