@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo mv bootTuner /usr/lib/systemd/scripts/
+sudo mv bootTuner.service /usr/lib/systemd/system/
+echo 'Moved files, enabling'
+sudo systemctl enable bootTuner
+exit 0

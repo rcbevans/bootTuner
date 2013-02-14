@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo systemctl disable bootTuner
+sudo rm /usr/lib/systemd/scripts/bootTuner
+sudo rm /usr/lib/systemd/system/bootTuner.service
+echo 'Done'
+exit 0

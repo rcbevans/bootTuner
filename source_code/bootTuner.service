@@ -3,7 +3,7 @@ Description=Auto set power settings
 
 [Service]
 Type=oneshot
-ExecStart=/usr/lib/systemd/scripts/autoTuner
+ExecStart=/usr/lib/systemd/scripts/bootTuner
 
 [Install]
 WantedBy=multi-user.target
