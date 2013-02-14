@@ -2,5 +2,5 @@
 sudo cp bootTuner /usr/lib/systemd/scripts/
 sudo cp bootTuner.service /usr/lib/systemd/system/
 sudo systemctl enable bootTuner
-echo 'All done!'
+echo 'all done'
 exit 0
