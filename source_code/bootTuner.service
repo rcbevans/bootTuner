@@ -1,0 +1,9 @@
+[Unit]
+Description=Auto set power settings
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/systemd/scripts/autoTuner
+
+[Install]
+WantedBy=multi-user.target

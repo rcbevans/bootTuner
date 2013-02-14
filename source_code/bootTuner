@@ -1,0 +1,25 @@
+#!/bin/bash
+#Enable runtime PM on PCI devices
+echo auto | tee /sys/bus/usb/devices/*/power/autosuspend > /dev/null
+#Enable autosusped on 1s on USB devices
+echo 1 | tee /sys/bus/{pci,spi,i2c}/devices/*/power/control > /dev/null
+#VM writeback timeout  
+echo '1500' > '/proc/sys/vm/dirty_writeback_centisecs';
+#Enable Audio codec power management   
+echo '1' > '/sys/module/snd_hda_intel/parameters/power_save';
+#Enable SATA link power management for /dev/sda
+echo 'min_power' > '/sys/class/scsi_host/host0/link_power_management_policy';
+#Wireless Power Saving for interface wlan0     
+iw dev wlan0 set power_save on
+#Enable SATA link power management for /dev/sda
+echo 'min_power' > '/sys/class/scsi_host/host0/link_power_management_policy';
+#NMI watchdog should be turned off     
+echo '0' > '/proc/sys/kernel/nmi_watchdog';
+#VM writeback timeout  
+echo '1500' > '/proc/sys/vm/dirty_writeback_centisecs';
+#Wake-on-lan status for device eth0    
+ethtool -s eth0 wol d;
+#Enable Audio codec power management
+echo '1' > '/sys/module/snd_hda_intel/parameters/power_save';
+echo 'min_power' > '/sys/class/scsi_host/host0/link_power_management_policy';
+exit 0
