@@ -18,3 +18,6 @@ The changes made by this script are taken from powerTop and do as follows:
 11. Enable Audio codec power management
 
 I made this script for my own convenience, feel free to make use of it. If you make any improvements please push the changes back to me!
+
+
+Test change
